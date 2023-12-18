@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# 💜 diary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</br>
+ 
+## Introduction
 
-## Available Scripts
+'한 입 크기로 잘라 먹는 리액트' Project3 [감정 일기장] 앱 만들기
 
-In the project directory, you can run:
+</br>
 
-### `npm start`
+- ### Home
+  - 사용자가 앱에 접속하면 처음으로 만나는 페이지
+  - 크게 상단 헤더와 하단 일기 리스트로 구성
+  - 월 단위로 일기를 조회하는 기능
+  - '최신순', 오래된 순'으로 일기 리스트 정렬 기능
+  - 새로운 일기 추가 기능
+- ### New
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  - 새로운 일기를 추가하는 페이지
+  - 뒤로가기 버튼이 있는 헤더와 날짜 입력, 감정 이미지 선택, 일기 작성 폼으로 구성
+  - 페이지 하단에는 취소하기, 작성 완료 버튼이 있음
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ### Diary
+  - 일기를 상세히 조회하는 페이지
+  - 뒤로 가기와 수정하기 버튼이 있음
+  - 수정하기 버튼 클릭 시 Edit 페이지로 이동
+- ### Edit
+  - 작성된 일기를 수정할 수 있는 페이지
+  - New 페이지와 비슷
+  - 삭제하기 버튼 (차이점)
 
-### `npm test`
+</br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Conventional Commits
 
-### `npm run build`
+- feat (feature): 새로운 기능 추가
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- fix (bug fix): 버그 수정
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- docs (documentation): 문서 추가 또는 수정
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- style: 코드 스타일 관련 변경
 
-### `npm run eject`
+- refactor: 코드 리팩토링, 기능 변경 없이 코드 구조 수정
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- test: 테스트 관련 코드 추가 또는 수정
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- chore (maintain): 유지보수를 위한 작업, 패키지 업데이트, 빌드 설정 변경 등
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+</br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 개발 기간
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 2023년 11월 28일 ~ 2023년 12월 17일
