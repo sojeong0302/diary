@@ -15,6 +15,14 @@ const Editor = ({ initData, onSubmit }) => {
       date: e.target.value,
     });
   };
+
+  const handleChangeContent = (e) => {
+    setState({
+      ...state,
+      content: e.target.value,
+    });
+  };
+
   return (
     <div className="Editor">
       <div className="editor_section">
@@ -26,7 +34,13 @@ const Editor = ({ initData, onSubmit }) => {
         <h4>오늘의 감정</h4>
       </div>
       <div className="editor_section">
-        {/* 일기 */}
+        <div className="input_wrapper">
+          <textarea
+            placeholder="오늘은 어땠나요?"
+            value={state.content}
+            onChange={handleChangeContent}
+          />
+        </div>
         <h4>오늘의 일기</h4>
       </div>
       <div className="editor_section">
