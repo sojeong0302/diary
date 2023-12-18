@@ -5,7 +5,11 @@ import Header from "../component/Header.js";
 const Home = () => {
   return (
     <div>
-      <Editor />
+      <Editor
+        onSubmit={() => {
+          alert("작성 완료");
+        }}
+      />
     </div>
   );
 };
