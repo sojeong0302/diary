@@ -1,4 +1,4 @@
-import { getFormattedDate } from "../util";
+import { getFormattedDate, emotionList } from "../util";
 import Button from "../component/Button.js";
 import "./Editor.css";
 import { useState } from "react";
@@ -42,8 +42,12 @@ const Editor = ({ initData, onSubmit }) => {
         <input type="date" value={state.date} onChange={handleChangeDate} />
       </div>
       <div className="editor_section">
-        {/* 감정 */}
         <h4>오늘의 감정</h4>
+        <div className="input_wrapper emotion_list_wrapper">
+          {emotionList.map((it) => (
+            <img key={it.id} alt={`emotion${it.id}`} src={it.img} />
+          ))}
+        </div>
       </div>
       <div className="editor_section">
         <h4>오늘의 일기</h4>
