@@ -3,6 +3,7 @@ import Button from "../component/Button.js";
 import "./Editor.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import EmotionItem from "./EmotionItem.js";
 
 const Editor = ({ initData, onSubmit }) => {
   const [state, setState] = useState({
@@ -35,6 +36,13 @@ const Editor = ({ initData, onSubmit }) => {
     navigate(-1);
   };
 
+  const handleChangeEmotion = (emotionId) => {
+    setState({
+      ...state,
+      emotionId,
+    });
+  };
+
   return (
     <div className="Editor">
       <div className="editor_section">
@@ -45,7 +53,12 @@ const Editor = ({ initData, onSubmit }) => {
         <h4>오늘의 감정</h4>
         <div className="input_wrapper emotion_list_wrapper">
           {emotionList.map((it) => (
-            <img key={it.id} alt={`emotion${it.id}`} src={it.img} />
+            <EmotionItem
+              key={it.id}
+              {...it}
+              onClick={handleChangeEmotion}
+              isSelected={state.emotionId === it.id}
+            />
           ))}
         </div>
       </div>
