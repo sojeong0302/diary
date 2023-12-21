@@ -5,8 +5,7 @@ import New from "./pages/New";
 import Diary from "./pages/Diary";
 import Edit from "./pages/Edit";
 import { Link, Route, Routes } from "react-router-dom";
-import { useReducer, useRef } from "react";
-
+import { useReducer, useRef, useEffect } from "react";
 function reducer(state, action) {
   switch (action.type) {
     case "CREATE": {
@@ -20,15 +19,46 @@ function reducer(state, action) {
     case "DELETE": {
       return state.filter((it) => String(it.id) !== String(action.targetId));
     }
+    case "INIT": {
+      return action.data;
+    }
     default: {
       return state;
     }
   }
 }
 
+const mockData = [
+  {
+    id: "mock1",
+    date: new Date().getTime(),
+    content: "mock1",
+    emotionId: 1,
+  },
+  {
+    id: "mock2",
+    date: new Date().getTime(),
+    content: "mock2",
+    emotionId: 2,
+  },
+  {
+    id: "mock3",
+    date: new Date().getTime(),
+    content: "mock3",
+    emotionId: 3,
+  },
+];
+
 function App() {
   const [data, dispatch] = useReducer(reducer, []);
   const idRef = useRef(0);
+
+  useEffect(() => {
+    dispatch({
+      type: "INIT",
+      data: mockData,
+    });
+  });
 
   const onCreate = (date, content, emotionId) => {
     dispatch({
