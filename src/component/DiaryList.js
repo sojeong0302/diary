@@ -1,6 +1,6 @@
 import "./DiaryList.css";
 import Button from "./Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const sortOptionList = [
@@ -10,6 +10,7 @@ const sortOptionList = [
 
 const DiaryList = ({ data }) => {
   const [sortType, setSortType] = useState("latest");
+  const [sortedData, setSortedData] = useState([]);
 
   const onChangeSortType = (e) => {
     setSortType(e.target.value);
@@ -20,6 +21,19 @@ const DiaryList = ({ data }) => {
   const onClickNew = () => {
     navigate("/new");
   };
+
+  useEffect(() => {
+    const compare = (a, b) => {
+      if (sortType === "latest") {
+        return Number(b.date) - Number(a.date);
+      } else {
+        return Number(a.date) - Number(b.date);
+      }
+    };
+    const copyList = JSON.parse(JSON.stringify(data));
+    copyList.sort(compare);
+    setSortedData(copyList);
+  }, [data, sortType]);
 
   return (
     <div className="DiaryList">
