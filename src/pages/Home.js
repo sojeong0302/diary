@@ -3,6 +3,7 @@ import { DiaryStateContext } from "../App.js";
 import Button from "../component/Button";
 import Header from "../component/Header";
 import { getMonthRangeByDate } from "../util.js";
+import DiaryList from "../component/DiaryList.js";
 
 const Home = () => {
   const [pivotDate, setPivotDate] = useState(new Date());
@@ -42,6 +43,7 @@ const Home = () => {
         leftChild={<Button text={"<"} onClick={onDecreaseMoth} />}
         rightChild={<Button text={">"} onClick={onIncreaseMoth} />}
       />
+      <DiaryList data={filteredData} />
     </div>
   );
 };
