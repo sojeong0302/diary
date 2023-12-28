@@ -51,6 +51,18 @@ const mockData = [
     content: "mock3",
     emotionId: 3,
   },
+  {
+    id: "mock4",
+    date: new Date().getTime() - 4,
+    content: "mock4",
+    emotionId: 4,
+  },
+  {
+    id: "mock5",
+    date: new Date().getTime() - 5,
+    content: "mock5",
+    emotionId: 5,
+  },
 ];
 
 function App() {
