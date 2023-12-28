@@ -11,8 +11,8 @@ const DiaryItem = ({ id, emotionId, content, date }) => {
   return (
     <div className="DiaryItem">
       <div
-        conClick={goDetail}
-        className={["img_selection", `img_section_${emotionId}`].join(" ")}
+        onClick={goDetail}
+        className={["img_section", `img_section_${emotionId}`].join(" ")}
       >
         <img alt={`emotion${emotionId}`} src={getEmotionImgById(emotionId)} />
       </div>
