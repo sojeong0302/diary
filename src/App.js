@@ -36,8 +36,7 @@ const mockData = [
   {
     id: "mock1",
     date: new Date().getTime() - 1,
-    content:
-      "요즘 스타듀밸리에 빠져있다. 농사를 하는건 힘들지만 수확해서 팔 때 그게 돈이 된다고 생각하니까 너무 행복하다.",
+    content: "mock1",
     emotionId: 1,
   },
   {
@@ -71,13 +70,6 @@ function App() {
   const [data, dispatch] = useReducer(reducer, []);
   const idRef = useRef(0);
 
-  useEffect(() => {
-    dispatch({
-      type: "INIT",
-      data: mockData,
-    });
-  });
-
   const onCreate = (date, content, emotionId) => {
     dispatch({
       type: "CREATE",
@@ -88,6 +80,9 @@ function App() {
         emotionId,
       },
     });
+    console.log(
+      `App에서 onCreate가 잘 받는지? ${date} ${content} ${emotionId}`
+    );
     idRef.current += 1;
   };
 
