@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../component/Button";
 import Header from "../component/Header";
+import Editor from "../component/Editor";
 
 const New = () => {
   const navigate = useNavigate();
@@ -14,6 +15,7 @@ const New = () => {
         title={"새 일기 쓰기"}
         leftChild={<Button text={"< 뒤로 가기"} onClick={goBack} />}
       />
+      <Editor />
     </div>
   );
 };
