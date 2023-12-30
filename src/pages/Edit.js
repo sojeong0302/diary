@@ -4,6 +4,7 @@ import Button from "../component/Button";
 import Header from "../component/Header";
 import { useContext } from "react";
 import { DiaryDispatchContext } from "../App";
+import Editor from "../component/Editor";
 
 const Edit = () => {
   const { id } = useParams();
@@ -38,6 +39,7 @@ const Edit = () => {
             />
           }
         />
+        <Editor initData={data} />
       </div>
     );
   }
