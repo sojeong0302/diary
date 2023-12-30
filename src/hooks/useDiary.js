@@ -17,7 +17,7 @@ const useDiary = (id) => {
     }
   }, [id, data]);
 
-  return data;
+  return diary;
 };
 
 export default useDiary;
