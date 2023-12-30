@@ -12,58 +12,33 @@ export const DiaryDispatchContext = React.createContext();
 
 function reducer(state, action) {
   switch (action.type) {
-    case "CREATE": {
-      return [action.data, ...state];
-    }
-    case "UPDATE": {
-      return state.map((it) =>
-        String(it.id) === String(action.data.id) ? { ...action.data } : it
-      );
-    }
-    case "DELETE": {
-      return state.filter((it) => String(it.id) !== String(action.targetId));
-    }
     case "INIT": {
       return action.data;
+    }
+    case "CREATE": {
+      const newState = [action.data, ...state];
+      localStorage.setItem("diary", JSON.stringify(newState));
+      return newState;
+    }
+    case "UPDATE": {
+      const newState = state.map((it) =>
+        String(it.id) === String(action.data.id) ? { ...action.data } : it
+      );
+      localStorage.setItem("diary", JSON.stringify(newState));
+      return newState;
+    }
+    case "DELETE": {
+      const newState = state.filter(
+        (it) => String(it.id) !== String(action.targetId)
+      );
+      localStorage.setItem("diary", JSON.stringify(newState));
+      return newState;
     }
     default: {
       return state;
     }
   }
 }
-
-const mockData = [
-  {
-    id: "mock1",
-    date: new Date().getTime() - 1,
-    content: "mock1",
-    emotionId: 1,
-  },
-  {
-    id: "mock2",
-    date: new Date().getTime() - 2,
-    content: "mock2",
-    emotionId: 2,
-  },
-  {
-    id: "mock3",
-    date: new Date().getTime() - 3,
-    content: "mock3",
-    emotionId: 3,
-  },
-  {
-    id: "mock4",
-    date: new Date().getTime() - 4,
-    content: "mock4",
-    emotionId: 4,
-  },
-  {
-    id: "mock5",
-    date: new Date().getTime() - 5,
-    content: "mock5",
-    emotionId: 5,
-  },
-];
 
 function App() {
   const [isDataLoaded, setIsDataLoaded] = useState(false);
@@ -80,9 +55,6 @@ function App() {
         emotionId,
       },
     });
-    console.log(
-      `App에서 onCreate가 잘 받는지? ${date} ${content} ${emotionId}`
-    );
     idRef.current += 1;
   };
 
@@ -106,10 +78,19 @@ function App() {
   };
 
   useEffect(() => {
-    dispatch({
-      type: "INIT",
-      data: mockData,
-    });
+    const rawData = localStorage.getItem("diary");
+    if (!rawData) {
+      setIsDataLoaded(true);
+      return;
+    }
+    const localData = JSON.parse(rawData);
+    if (localData.length === 0) {
+      setIsDataLoaded(true);
+      return;
+    }
+    localData.sort((a, b) => Number(b.id) - Number(a.id));
+    idRef.current = localData[0].id + 1;
+    dispatch({ type: "INIT", data: localData });
     setIsDataLoaded(true);
   }, []);
 

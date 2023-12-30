@@ -15,9 +15,6 @@ const New = () => {
   const onSubmit = (data) => {
     const { date, content, emotionId } = data;
     onCreate(date, content, emotionId);
-    console.log(
-      `New에서 onSubmit이 잘 넘겨주는지? ${date} ${content} ${emotionId}`
-    );
     navigate("/", { replace: true });
   };
 
