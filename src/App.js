@@ -36,7 +36,8 @@ const mockData = [
   {
     id: "mock1",
     date: new Date().getTime() - 1,
-    content: "mock1",
+    content:
+      "요즘 스타듀밸리에 빠져있다. 농사를 하는건 힘들지만 수확해서 팔 때 그게 돈이 된다고 생각하니까 너무 행복하다.",
     emotionId: 1,
   },
   {

@@ -51,3 +51,11 @@
   font-size: 25px;
   color: white;
 }
+
+.Viewer .content_wrapper {
+  width: 100%;
+  background-color: #ececec;
+  border-radius: 5px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
