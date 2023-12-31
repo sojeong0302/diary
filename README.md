@@ -1,7 +1,6 @@
 # 🔹diary🔹
-
+<a href="https://diary-9e650.web.app/"><img src="https://img.shields.io/badge/diary-9AB4DA?style=flat-square&logo=aiqfome&logoColor=white"/></a>
 </br>
- 
 ## Introduction
 
 '한 입 크기로 잘라 먹는 리액트' Project3 [감정 일기장] 앱 만들기
@@ -51,4 +50,4 @@
 
 ## 개발 기간
 
-- 2023년 12월 17일 ~
+- 2023년 12월 17일 ~ 2023년 12월 31일
